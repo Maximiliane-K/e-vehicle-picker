@@ -24,7 +24,19 @@ def intro():
     print("Welcome to Electric Vehicle Picker!\n")
     print(("This app is meant to support you and your customer on the journey"
         " of finding the right match when it comes to a new e-vehicle.\n"))
-    print(("Follow the instructions given to get an recommendation and save"
-        " the the data for further analysis."))
+    print(("Follow the instructions given to get a recommendation and save"
+        " the customer data for further analysis.\n"))
+
+
+def get_customer_name():
+    """
+    Get the customer's full name.
+    """
+    print("Please enter surname and first name of customer sepperated by a space.")
+    print("Only lowercase letters are allowed!")
+    print("Example: kennedy john\n")
+    customer_name = input("Enter customer name here:")
+    
 
 intro()
+get_customer_name()

@@ -17,6 +17,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('e-vehicle-survey-data')
 
+
 def intro():
     """
     Introduction to the app
@@ -28,15 +29,21 @@ def intro():
         " the customer data for further analysis.\n"))
 
 
-def get_customer_name():
+def get_customer_details():
     """
-    Get the customer's full name.
+    Get the customer's details full name, age, gender, 
+    and the info if they already drive electric.
     """
-    print("Please enter surname and first name of customer sepperated by a space.")
-    print("Only lowercase letters are allowed!")
-    print("Example: kennedy john\n")
-    customer_name = input("Enter customer name here:")
+    print("Please enter the 4 customer details as discribed below sepperated by a comma.")
+    print("Example: Austin Jane, 35, f, no\n")
+    details = ["1. Full Name: enter customers full name starting with the surname.", 
+               "2. Age: enter customers' age.",
+               "3. Gender: enter m,f or d.",
+               "4. Already drive electric? : enter yes or no.\n"]
+    print(*details, sep = "\n")
+
+    customer_details = input("Enter customer data here: ")
     
 
 intro()
-get_customer_name()
+get_customer_details()

@@ -1,32 +1,68 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# **Electric Vehicle Picker**
 
-Welcome,
+## **Code Institute Portfolio Project III**
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
+## **Background**
+ With the growth of the electric vehicle market, it can become quite difficult to keep up with all the options the brands have to offer. The cars differ in range, price and type, which can make choosing the right car a hassle. 
+Getting support from professionals, who ask the right questions can ease your way to the perfect e-vehicle. 
 
-## Reminders
+## **Contents**
+* [Background](#background)
+* [Strategy](#strategy)
+* [Scope](#scope)
+* [User Experience UX](#user-experience-ux)
+    * [Target audience](#target-audience)
+    * [User Stories](#user-stories)
+* [Flowchart](#flowchart)
+* [Database](#database)
+* [Features](#features)
+    * [Future Features](#future-features)
+* [Bugs and Challenges](#bugs-and-challenges)
+* [Technologies Used](#technologies-used)
+* [Deployment](#deployment)
+* [Development](#development)
+* [Testing](#testing)
+    * [Validation](#validation)
+* [Credits](#credits)
+    * [Code](#code)
+    * [Acknowledgments](#acknowledgments)
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+## **Strategy**
+The idea behind the *Electric Vehicle Picker* is to create an application that can help brokers, advisors, or sales employees to find the best option for their customers. 
+Based on the preferences regarding price, range, and type of car, a suitable match can be found and a recommendation can be made. 
 
-## Creating the Heroku app
+The data given by the customer can be saved and used for further analysis. For example concerning the e-vehicle market, personal sales or marketing demographics.  
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## **Scope**
+The Scope of this project is building a command-line application with Python. Users can parse and analyze data, export results to a file, and import datasets. 
 
-1. `heroku/python`
-2. `heroku/nodejs`
+## **User Experience UX**
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+### **Target Audience**
+The application is aimed at brokers, advisors, or sales employees of car dealerships whos jobs it is to find the matching electrical car to the preferences of their customers. 
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+### **User Stories**
 
-Connect your GitHub repository and deploy as normal.
+## **Flowchart**
 
-## Constraints
+## **Database**
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+## **Features**
 
----
+### **Future Features**
 
-Happy coding!
+## **Bugs and Challenges**
+
+## **Technologies Used**
+
+### **Languages**
+
+### **Frameworks & Tools**
+
+## **Deployment**
+
+## **Development**
+
+## **Testing**
+
+## **Credits**

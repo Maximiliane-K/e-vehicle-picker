@@ -62,16 +62,25 @@ def update_customer_details_worksheet(details):
 
 def select_car_type():
     """
-    Provide types of car to the user to be able to choose one
+    Function provides a selection of types of cars to the user 
+    to be able to get an user input. 
+    Run a while loop to repeatedly request data, until user input is valid.
     """
-    print("Please choose the preffered style of car.\n")
-    styles = ["a) Microcar", "b) Compact Car", "c) Hatchback", "d) SUV", "e) Sedan", "f) Cabrio\n"]
-    print(*styles, sep = "\n")
+    while True:
+        print("Please choose the preffered style of car.\n")
+        styles = ["a) Microcar", "b) Compact Car", "c) Hatchback", "d) SUV", "e) Sedan", "f) Cabrio\n"]
+        print(*styles, sep = "\n")
 
-    type_choices = input("Only select one letter [a, b, c, d, e, f]: \n")
+        type_choices = input("Only select one letter [a, b, c, d, e, f]: \n")
 
-    customer_choice = type_choices.lower().strip()
-    validate_style_choice(customer_choice)
+        customer_choice = type_choices.lower().strip()
+        print("Validating entered value...\n")
+
+        if validate_style_choice(customer_choice):
+            print(f"Entry '{customer_choice}' is valid. Processing data...\n")
+            break
+
+    return customer_choice
 
 
 def validate_style_choice(customer_choice):
@@ -84,7 +93,10 @@ def validate_style_choice(customer_choice):
                 f"You entered '{customer_choice}'. \nOnly letters from a-f are valid"
             )
     except ValueError as e:
-        print(f"Entry not valid:\n{e}, please try again.")
+        print(f"Entry not valid:\n{e}, please try again.\n")
+        return False
+
+    return True
     
 
 intro()

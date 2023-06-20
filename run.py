@@ -58,8 +58,21 @@ def update_customer_details_worksheet(details):
     customers_worksheet.append_row(customer_details)
     print("Customer details successfully added to customers worksheet\n")
 
+def select_car_type():
+    """
+    Provide types of car to the user to be able to choose one
+    """
+    print("Please choose the preffered style of car.\n")
+    styles = ["a) Microcar", "b) Compact Car", "c) Hatchback", "d) SUV", "e) Sedan", "f) Cabrio\n"]
+    print(*styles, sep = "\n")
+
+    style_choice = input("Please only select one letter [a, b, c, d, e, f]: ")
+
+    customer_style = style_choice.lower().strip()
+    
 
 intro()
 details = get_customer_details()
 customer_details = [detail for detail in details]
 update_customer_details_worksheet(customer_details)
+select_car_type()

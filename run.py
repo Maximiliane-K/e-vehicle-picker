@@ -79,16 +79,31 @@ def validate_data_input(customer_details):
         # check if full name value is numeric
         if customer_details[0].isnumeric():
             raise ValueError(
-                f"You entered {customer_details[0]} as first value. First value has to be full name"
+                f"You entered {customer_details[0]} as first value. \
+                First value has to be full name"
             )
+
         # check if full name value is empty
         if customer_details[0] == "":
             raise ValueError(
-                f"You entered an empty value "
+                f"You did not enter the full name"
+            )
+        
+        # check if age value is empty
+        if customer_details[1] == "":
+            raise ValueError(
+                f"You did not enter the age"
+            )
+
+        # check if age value is alphabetic
+        if customer_details[1].isalpha():
+            raise ValueError(
+                f"You entered {customer_details[1]} as second value. \
+                Second values has to be a number"
             )
 
     except ValueError as e:
-        print(f"Invalid data:\n{e}.Please try again.\n")
+        print(f"Invalid data:\n{e}. Please try again.\n")
         return False
 
     return True
@@ -183,5 +198,3 @@ customer_details = [detail for detail in details]
 update_customer_details_worksheet(customer_details)
 customer_type = select_car_type()
 get_type_options(customer_type)
-
-

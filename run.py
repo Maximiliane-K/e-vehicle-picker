@@ -25,8 +25,8 @@ def intro():
     Introduction to the app
     """
     print("Welcome to Electric Vehicle Picker!\n")
-    print(("This app is meant to support you and your customer on the journey"
-           " of finding the right match when it comes to a new e-vehicle.\n"))
+    print(("This app is meant to support you and your customer to find"
+           " the right match when it comes to a new e-vehicle.\n"))
     print(("Follow the instructions given to get a recommendation and save"
            " the customer data for further analysis.\n"))
 
@@ -37,8 +37,8 @@ def get_customer_details():
     and the info if they already drive electric.
     """
     while True:
-        print(("Please enter the 4 customer details as discribed below"
-            "sepperated by a comma without spaces."))
+        print(("Please enter the 4 customer details as discribed below\n"
+            "sepperated by a comma without spaces:\n"))
         details = ["1. Full Name: enter customers first name and surname", 
                 "2. Age: enter customers' age",
                 "3. Gender: enter m,f or d",
@@ -67,16 +67,28 @@ def validate_data_input(customer_details):
         # check if the length of input is valid
         if len(customer_details) != 4:
             raise ValueError(
-                f"Exactly 4 values are required, you provided {len(customer_details)}"
+                f"Exactly 4 values are required"
             )
+
         # check for empty input
         if customer_details == "":
             raise ValueError(
                 f"You didn't enter any value: {len(customer_details)}"
             )
 
+        # check if full name value is numeric
+        if customer_details[0].isnumeric():
+            raise ValueError(
+                f"You entered {customer_details[0]} as first value. First value has to be full name"
+            )
+        # check if full name value is empty
+        if customer_details[0] == "":
+            raise ValueError(
+                f"You entered an empty value "
+            )
+
     except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
+        print(f"Invalid data:\n{e}.Please try again.\n")
         return False
 
     return True

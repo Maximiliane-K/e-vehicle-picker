@@ -117,10 +117,23 @@ def validate_data_input(customer_details):
             )
         
         # check if gender value is f,m or d
-        if customer_details[2] not in ["f", "m", "d"]:
+        if customer_details[2] not in [" f", " m", " d"]:
             raise ValueError(
                 f"You entered {customer_details[2]} as third value."\
-                " Third value has to be 'f','m' or 'd' for gender"
+                " Third value has to be 'f','m' or 'd' for gender.\n"\
+                "Don't forget the space before the letter"
+            )
+        # check if value is yes or no
+        if customer_details[3] not in [" yes", " no"]:
+            raise ValueError(
+                f"You entered {customer_details[3]} as forth value."\
+                " Answer question only with yes or no.\n"\
+                "Don't forget the space before the yes/no"     
+            )
+        
+        if customer_details[3] == "":
+            raise ValueError(
+                f"You entered {customer_details[3]}. Only answer with yes or no"
             )
 
     except ValueError as e:

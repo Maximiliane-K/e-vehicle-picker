@@ -4,6 +4,7 @@ e-vehicle-survey-data spreadsheet
 """
 import gspread
 from google.oauth2.service_account import Credentials
+from pprint import pprint
 
 # The following code was taken from the love_sandwiches 
 # walkthrough project by CodeInstitute
@@ -60,6 +61,7 @@ def update_customer_details_worksheet(details):
     customers_worksheet.append_row(customer_details)
     print("Customer details successfully added to customers worksheet.\n")
 
+
 def select_car_type():
     """
     Function provides a selection of types of cars to the user 
@@ -68,10 +70,10 @@ def select_car_type():
     """
     while True:
         print("Please choose the preffered style of car.\n")
-        styles = ["a) Microcar", "b) Compact Car", "c) Hatchback", "d) SUV", "e) Sedan", "f) Cabrio\n"]
+        styles = ["a) Microcar", "b) Hatchback", "c) Sedan", "d) SUV", "e) Convertable\n"]
         print(*styles, sep = "\n")
 
-        type_choices = input("Only select one letter [a, b, c, d, e, f]: \n")
+        type_choices = input("Only select one letter [a, b, c, d, e]: \n")
 
         customer_choice = type_choices.lower().strip()
         print("Validating entered value...\n")
@@ -79,6 +81,8 @@ def select_car_type():
         if validate_style_choice(customer_choice):
             print(f"Entry '{customer_choice}' is valid. Processing data...\n")
             break
+
+        get_options_type(customer_choice)
 
     return customer_choice
 
@@ -88,7 +92,7 @@ def validate_style_choice(customer_choice):
     Function to validate if the user input given is valid.
     """
     try:
-        if customer_choice not in ["a", "b", "c", "d", "e", "f"]:
+        if customer_choice not in ["a", "b", "c", "d", "e"]:
             raise ValueError(
                 f"You entered '{customer_choice}'. \nOnly letters from a-f are valid"
             )
@@ -97,11 +101,43 @@ def validate_style_choice(customer_choice):
         return False
 
     return True
+
+def get_options_type(customer_type):
+    """
+    Function to retrieve data from the options worksheet and compare 
+    the options with the users input. 
+    """
+    if customer_type == "a":
+        car_type = "microcar"
+
+    elif customer_type == "b":
+        car_type = "hatchback"
     
+    elif customer_type == "c":
+        car_type = "sedan"
+
+    elif customer_type == "d":
+        car_type = "suv"
+
+    elif customer_type == "e":
+        car_type = "convertible"
+
+
+    print(f"The following options are {car_type.capitalize()}s:\n")
+
+    # retrieve all options from worksheet options
+    all_options = SHEET.worksheet("options")
+    options = all_options.get_all_values()
+    
+    # for loop itterates through all options and matches this with user input
+    for option in options:
+        if option[3] == car_type:
+            print(option)
+
 
 intro()
 details = get_customer_details()
 customer_details = [detail for detail in details]
 update_customer_details_worksheet(customer_details)
-select_car_type()
-
+customer_type = select_car_type()
+get_options_type(customer_type)

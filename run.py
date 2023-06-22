@@ -36,20 +36,50 @@ def get_customer_details():
     Get the customers' full name, age, gender
     and the info if they already drive electric.
     """
-    print(("Please enter the 4 customer details as discribed below"
-           "sepperated by a comma without spaces."))
-    details = ["1. Full Name: enter customers first name and surname", 
-               "2. Age: enter customers' age",
-               "3. Gender: enter m,f or d",
-               "4. Already drive electric? : enter yes or no\n"]
-    print(*details, sep = "\n\n")
-    print("Example: June Austin,35,f,no\n")
+    while True:
+        print(("Please enter the 4 customer details as discribed below"
+            "sepperated by a comma without spaces."))
+        details = ["1. Full Name: enter customers first name and surname", 
+                "2. Age: enter customers' age",
+                "3. Gender: enter m,f or d",
+                "4. Already drive electric? : enter yes or no\n"]
+        print(*details, sep = "\n\n")
+        print("Example: June Austin, 35, f, no\n")
 
-    details_str = input("Enter customer details here: ")
+        details_str = input("Enter customer details here: ")
 
-    customer_details = details_str.split(",")
+        customer_details = details_str.split(",")
+
+        if validate_data_input(customer_details):
+            print("Data valid!")
+            break
 
     return customer_details
+
+
+def validate_data_input(customer_details):
+    """
+    Function to validate if the customer details given 
+    are valid.
+    """
+    try:
+        # code from CodeInstitute love_sandwiches walkthrough project
+        # check if the length of input is valid
+        if len(customer_details) != 4:
+            raise ValueError(
+                f"Exactly 4 values are required, you provided {len(customer_details)}"
+            )
+        # check for empty input
+        if customer_details == "":
+            raise ValueError(
+                f"You didn't enter any value: {len(customer_details)}"
+            )
+
+    except ValueError as e:
+        print(f"Invalid data: {e}, please try again.\n")
+        return False
+
+    return True
 
 
 def update_customer_details_worksheet(details):
@@ -78,16 +108,16 @@ def select_car_type():
         customer_choice = type_choices.lower().strip()
         print("Validating entered value...\n")
 
-        if validate_style_choice(customer_choice):
+        if validate_type_choice(customer_choice):
             print(f"Entry '{customer_choice}' is valid. Processing data...\n")
             break
 
-        get_options_type(customer_choice)
+        get_type_options(customer_choice)
 
     return customer_choice
 
 
-def validate_style_choice(customer_choice):
+def validate_type_choice(customer_choice):
     """
     Function to validate if the user input given is valid.
     """
@@ -102,7 +132,7 @@ def validate_style_choice(customer_choice):
 
     return True
 
-def get_options_type(customer_type):
+def get_type_options(customer_type):
     """
     Function to retrieve data from the options worksheet and compare 
     the options with the users input. 
@@ -121,17 +151,17 @@ def get_options_type(customer_type):
 
     elif customer_type == "e":
         car_type = "convertible"
-
+     
 
     print(f"The following options are {car_type.capitalize()}s:\n")
 
     # retrieve all options from worksheet options
     all_options = SHEET.worksheet("options")
-    options = all_options.get_all_values()
+    options = all_options.get_all_records()
     
     # for loop itterates through all options and matches this with user input
     for option in options:
-        if option[3] == car_type:
+        if option["Type"] == car_type:
             print(option)
 
 
@@ -140,4 +170,6 @@ details = get_customer_details()
 customer_details = [detail for detail in details]
 update_customer_details_worksheet(customer_details)
 customer_type = select_car_type()
-get_options_type(customer_type)
+get_type_options(customer_type)
+
+

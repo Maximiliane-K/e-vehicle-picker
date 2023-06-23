@@ -19,6 +19,8 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('e-vehicle-survey-data')
 
+customers_worksheet = SHEET.worksheet("customers")
+
 
 def intro():
     """
@@ -50,11 +52,12 @@ def get_customer_details():
         details_str = input("Enter customer details here: ")
 
         customer_details = details_str.split(",")
-
+        
         if validate_data_input(customer_details):
             print("Data valid!")
             break
-
+    
+    add_id(customer_details)
     return customer_details
 
 
@@ -142,13 +145,22 @@ def validate_data_input(customer_details):
 
     return True
 
-
+    
+def add_id(customer_details):
+    """
+    Function to add id to customer details
+    """
+    id_new = []
+    id_customers = customers_worksheet.col_values(1)[-1]
+    id_new = int(id_customers) + 1
+    customer_details.insert(0, id_new)
+    
+    
 def update_customer_details_worksheet(details):
     """
     Update customers worksheet, add new row with customer details
     """
     print("Updating customers worksheet...\n")
-    customers_worksheet = SHEET.worksheet("customers")
     customers_worksheet.append_row(customer_details)
     print("Customer details successfully added to customers worksheet.\n")
 

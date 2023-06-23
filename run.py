@@ -40,14 +40,14 @@ def get_customer_details():
     """
     while True:
         print(("Please enter the 4 customer details as discribed below\n" \
-               "sepperated by a comma without spaces:\n"))
+               "with NO spaces between the values:\n"))
         details = ["1. Full Name: enter customers first name and surname", 
                    "2. Age: enter customers' age",
                    "3. Gender: enter m,f or d",
                    "4. Already drive electric? : enter yes or no\n"]
 
         print(*details, sep="\n\n")
-        print("Example: June Austin, 35, f, no\n")
+        print("Example: June Austin,35,f,no\n")
 
         details_str = input("Enter customer details here: ")
 
@@ -120,18 +120,18 @@ def validate_data_input(customer_details):
             )
         
         # check if gender value is f,m or d
-        if customer_details[2] not in [" f", " m", " d"]:
+        if customer_details[2] not in ["f", "m", "d"]:
             raise ValueError(
                 f"You entered {customer_details[2]} as third value."\
                 " Third value has to be 'f','m' or 'd' for gender.\n"\
-                "Don't forget the space before the letter"
+                "Don't forget to remove the space before the letter"
             )
         # check if value is yes or no
-        if customer_details[3] not in [" yes", " no"]:
+        if customer_details[3] not in ["yes", "no"]:
             raise ValueError(
                 f"You entered {customer_details[3]} as forth value."\
                 " Answer question only with yes or no.\n"\
-                "Don't forget the space before the yes/no"     
+                "Don't forget to remove the space before the yes/no"     
             )
         
         if customer_details[3] == "":

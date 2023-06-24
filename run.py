@@ -181,7 +181,7 @@ def select_car_type():
         type_choices = input("Only select one letter [a, b, c, d, e]: \n")
 
         customer_choice = type_choices.lower().strip()
-        print("Validating entered value...\n")
+        print("Validating entered value...")
 
         if validate_type_choice(customer_choice):
             print(f"Entry '{customer_choice}' is valid. Processing data...\n")
@@ -200,10 +200,10 @@ def validate_type_choice(customer_choice):
         if customer_choice not in ["a", "b", "c", "d", "e"]:
             raise ValueError(
                 f"You entered '{customer_choice}'. \
-                     \nOnly letters from a-f are valid"
+                     \nOnly letters from a-e are valid"
             )
     except ValueError as e:
-        print(f"Entry not valid:\n{e}, please try again.\n")
+        print(f"\nEntry not valid:\n{e}, please try again.\n")
         return False
 
     return True
@@ -242,15 +242,44 @@ def get_type_options(customer_type):
 
 
 def select_price_range(car_options):
-    print("Please choose the preffered price rang (prices displayed in Euro):\n")
-    range_km = ["a) 15000 - 20000", "b) 20000 - 25000", "c) 25000 - 30000", 
-                  "d) 30000 - 40000", "e) All cars\n"]
+    """
+    Function provides a selection of price ranges for customer to choose 
+    from. Selection input by user.
+    Run a while loop to repeatedly request data, until user input is valid.
+    """
+    while True:
+        print("\nPlease choose the preffered price range (prices displayed in Euro):\n")
+        range_km = ["a) 15000 - 20000", "b) 20000 - 25000", "c) 25000 - 30000", 
+                        "d) 30000 - 40000", "e) Show all cars - I got cash!\n"]
+            
+        print(*range_km, sep="\n")
+
+        range_choices = input("Only select one letter [a, b, c, d, e]: \n")
+
+        customer_range_choice = range_choices.lower().strip()
+        print("Validating entered value...")
+
+        if validate_price_choice(customer_range_choice):
+            print(f"Entry '{customer_range_choice}' is valid. Processing data...\n")
+            break
+
+    return customer_range_choice
+
+def validate_price_choice(customer_range_choice):
+    """
+    Function to validate the price range choice
+    """
+    try:
+        if customer_range_choice not in ["a", "b", "c", "d", "e"]:
+            raise ValueError(
+                f"You entered '{customer_range_choice}'. \
+                     \nOnly letters from a-e are valid"
+            )
+    except ValueError as e:
+        print(f"\nEntry not valid:\n{e}, please try again.\n")
+        return False
     
-    print(*range_km, sep="\n")
-
-    range_choices = input("Only select one letter [a, b, c, d, e]: \n")
-
-    customer_range_choice = range_choices.lower().strip()
+    return True
 
 
 intro()

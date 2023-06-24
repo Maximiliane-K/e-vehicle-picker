@@ -1,12 +1,12 @@
 """
-Imported libraries to access and update data in 
+Imported libraries to access and update data in
 e-vehicle-survey-data spreadsheet
 """
 import gspread
 from google.oauth2.service_account import Credentials
 from pprint import pprint
 
-# The following code was taken from the love_sandwiches 
+# The following code was taken from the love_sandwiches
 # walkthrough project by CodeInstitute
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -19,6 +19,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('e-vehicle-survey-data')
 
+# variable to access customer worksheet
 customers_worksheet = SHEET.worksheet("customers")
 
 
@@ -39,9 +40,9 @@ def get_customer_details():
     and the info if they already drive electric.
     """
     while True:
-        print(("Please enter the 4 customer details as discribed below\n" \
+        print(("Please enter the 4 customer details as discribed below\n"
                "with NO spaces between the values:\n"))
-        details = ["1. Full Name: enter customers first name and surname", 
+        details = ["1. Full Name: enter customers first name and surname",
                    "2. Age: enter customers' age",
                    "3. Gender: enter m,f or d",
                    "4. Already drive electric? : enter yes or no\n"]
@@ -52,18 +53,18 @@ def get_customer_details():
         details_str = input("Enter customer details here: ")
 
         customer_details = details_str.split(",")
-        
+
         if validate_data_input(customer_details):
             print("Data valid!")
             break
-    
+
     add_id(customer_details)
     return customer_details
 
 
 def validate_data_input(customer_details):
     """
-    Function to validate if the customer details given 
+    Function to validate if the customer details given
     are valid.
     """
     try:
@@ -83,7 +84,7 @@ def validate_data_input(customer_details):
         # check if full name value is numeric
         if customer_details[0].isnumeric():
             raise ValueError(
-                f"You entered {customer_details[0]} as first value."\
+                f"You entered {customer_details[0]} as first value."
                 " First value has to be full name"
             )
 
@@ -92,7 +93,7 @@ def validate_data_input(customer_details):
             raise ValueError(
                 f"You did not enter the full name"
             )
-        
+
         # check if age value is empty
         if customer_details[1] == "":
             raise ValueError(
@@ -102,41 +103,41 @@ def validate_data_input(customer_details):
         # check if age value is alphabetic
         if customer_details[1].isalpha():
             raise ValueError(
-                f"You entered {customer_details[1]} as second value."\
+                f"You entered {customer_details[1]} as second value."
                 " Second value has to be a number"
             )
-        
+
         # check if gender value is empty
         if customer_details[2] == "":
             raise ValueError(
                 f"You did not enter the gender"
             )
-        
+
         # check if gender value is numeric
         if customer_details[2].isnumeric():
             raise ValueError(
-                f"You entered {customer_details[2]} as third value."\
+                f"You entered {customer_details[2]} as third value."
                 " Third value has to be m,f or d for gender"
             )
-        
+
         # check if gender value is f,m or d
         if customer_details[2] not in ["f", "m", "d"]:
             raise ValueError(
-                f"You entered {customer_details[2]} as third value."\
-                " Third value has to be 'f','m' or 'd' for gender.\n"\
+                f"You entered {customer_details[2]} as third value."
+                " Third value has to be 'f','m' or 'd' for gender.\n"
                 "Don't forget to remove the space before the letter"
             )
         # check if value is yes or no
         if customer_details[3] not in ["yes", "no"]:
             raise ValueError(
-                f"You entered {customer_details[3]} as forth value."\
-                " Answer question only with yes or no.\n"\
-                "Don't forget to remove the space before the yes/no"     
+                f"You entered {customer_details[3]} as forth value."
+                " Answer question only with yes or no.\n"
+                "Don't forget to remove the space before the yes/no"
             )
-        
+
         if customer_details[3] == "":
             raise ValueError(
-                f"You entered {customer_details[3]}. Only answer with yes or no"
+                f"You entered {customer_details[3]}.Only answer with yes or no"
             )
 
     except ValueError as e:
@@ -145,7 +146,7 @@ def validate_data_input(customer_details):
 
     return True
 
-    
+
 def add_id(customer_details):
     """
     Function to add id to customer details
@@ -154,26 +155,27 @@ def add_id(customer_details):
     id_customers = customers_worksheet.col_values(1)[-1]
     id_new = int(id_customers) + 1
     customer_details.insert(0, id_new)
-    
-    
+
+
 def update_customer_details_worksheet(details):
     """
     Update customers worksheet, add new row with customer details
     """
     print("Updating customers worksheet...\n")
+    customer_details = []
     customers_worksheet.append_row(customer_details)
     print("Customer details successfully added to customers worksheet.\n")
 
 
 def select_car_type():
     """
-    Function provides a selection of types of cars to the user 
-    to be able to get an user input. 
+    Function provides a selection of types of cars to the user
+    to be able to get an user input.
     Run a while loop to repeatedly request data, until user input is valid.
     """
     while True:
         print("Please choose the preffered style of car.\n")
-        styles = ["a) Microcar", "b) Hatchback", "c) Sedan", 
+        styles = ["a) Microcar", "b) Hatchback", "c) Sedan",
                   "d) SUV", "e) Convertable\n"]
 
         print(*styles, sep="\n")
@@ -211,15 +213,16 @@ def validate_type_choice(customer_choice):
 
 def get_type_options(customer_type):
     """
-    Function to retrieve data from the options worksheet and compare 
-    the options with the users input. 
+    Function to retrieve data from the options worksheet and compare
+    the options with the users input.
     """
+    car_type = ""
     if customer_type == "a":
         car_type = "microcar"
 
     elif customer_type == "b":
         car_type = "hatchback"
-    
+
     elif customer_type == "c":
         car_type = "sedan"
 
@@ -228,64 +231,32 @@ def get_type_options(customer_type):
 
     elif customer_type == "e":
         car_type = "convertible"
-     
+
     print(f"The following options are {car_type.capitalize()}s:\n")
 
     # retrieve all options from worksheet options
     all_options = SHEET.worksheet("options")
     options = all_options.get_all_records()
-    
+
     # for loop itterates through all options and matches this with user input
+    result = []
     for option in options:
         if option["Type"] == car_type:
-            print(option)
+            result = list(option.values())[0]
+            option_results = result.split(",")
+            print(option_results)
 
 
-def select_price_range(car_options):
+def main():
     """
-    Function provides a selection of price ranges for customer to choose 
-    from. Selection input by user.
-    Run a while loop to repeatedly request data, until user input is valid.
+    Run all functions
     """
-    while True:
-        print("\nPlease choose the preffered price range (prices displayed in Euro):\n")
-        range_km = ["a) 15000 - 20000", "b) 20000 - 25000", "c) 25000 - 30000", 
-                        "d) 30000 - 40000", "e) Show all cars - I got cash!\n"]
-            
-        print(*range_km, sep="\n")
-
-        range_choices = input("Only select one letter [a, b, c, d, e]: \n")
-
-        customer_range_choice = range_choices.lower().strip()
-        print("Validating entered value...")
-
-        if validate_price_choice(customer_range_choice):
-            print(f"Entry '{customer_range_choice}' is valid. Processing data...\n")
-            break
-
-    return customer_range_choice
-
-def validate_price_choice(customer_range_choice):
-    """
-    Function to validate the price range choice
-    """
-    try:
-        if customer_range_choice not in ["a", "b", "c", "d", "e"]:
-            raise ValueError(
-                f"You entered '{customer_range_choice}'. \
-                     \nOnly letters from a-e are valid"
-            )
-    except ValueError as e:
-        print(f"\nEntry not valid:\n{e}, please try again.\n")
-        return False
-    
-    return True
+    intro()
+    details = get_customer_details()
+    customer_details = [detail for detail in details]
+    update_customer_details_worksheet(customer_details)
+    customer_type = select_car_type()
+    car_options = get_type_options(customer_type)
 
 
-intro()
-details = get_customer_details()
-customer_details = [detail for detail in details]
-update_customer_details_worksheet(customer_details)
-customer_type = select_car_type()
-car_options = get_type_options(customer_type)
-select_price_range(car_options)
+main()

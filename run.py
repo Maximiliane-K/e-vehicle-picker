@@ -240,10 +240,23 @@ def get_type_options(customer_type):
         if option["Type"] == car_type:
             print(option)
 
-              
+
+def select_price_range(car_options):
+    print("Please choose the preffered price rang (prices displayed in Euro):\n")
+    range_km = ["a) 15000 - 20000", "b) 20000 - 25000", "c) 25000 - 30000", 
+                  "d) 30000 - 40000", "e) All cars\n"]
+    
+    print(*range_km, sep="\n")
+
+    range_choices = input("Only select one letter [a, b, c, d, e]: \n")
+
+    customer_range_choice = range_choices.lower().strip()
+
+
 intro()
 details = get_customer_details()
 customer_details = [detail for detail in details]
 update_customer_details_worksheet(customer_details)
 customer_type = select_car_type()
-get_type_options(customer_type)
+car_options = get_type_options(customer_type)
+select_price_range(car_options)

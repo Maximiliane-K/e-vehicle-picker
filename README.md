@@ -25,6 +25,7 @@ The data given by the customer can be saved and used for further analysis. For e
 * [Testing](#testing)
     * [Validation](#validation)
 * [Credits](#credits)
+    * [Content](#content)
     * [Code](#code)
     * [Acknowledgments](#acknowledgments)
 
@@ -119,3 +120,17 @@ For local development the project repository can be found on [GitHub](https://gi
 ![CI Python Linter ](documentation/screenshots/ci-python-linter.png)
 
 ## **Credits**
+### **Content**
+The data used in the options worksheet of the Google Sheet was taken from:
+1. [GO!drive](https://godrive.at/Suche/Elektro?gclid=Cj0KCQjwy9-kBhCHARIsAHpBjHjDuvRK-QR95atJELkgRfm4N3FgLnVIs1qbM2JctXC118fY26TXNRYaAsCaEALw_wcB)
+2. [Einfach E-Auto](https://einfacheauto.de/)
+3. [Autobild.de](https://www.autobild.de/artikel/e-auto-reichweite-20977681.html)
+
+### **Code**
+* The *Love Sandwiches* walkthrough project by CodeInstitute was used as guide and inspiration for this application. 
+
+### **Acknowledgments**
+ * I would like to say thank you to my Code Institue Mentor [Brian O'Hare](https://ie.linkedin.com/in/bjohare) for guiding me through my third project. 
+
+
+

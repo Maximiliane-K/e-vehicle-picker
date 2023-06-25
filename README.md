@@ -47,6 +47,9 @@ The application is aimed at brokers, advisors, or sales employees of car dealers
 -   As a user, I want to want to see the result of my selection.
 
 ## **Flowchart**
+The flowchart was made using [Lucidchart](https://www.lucidchart.com/pages/landing?utm_source=google&utm_medium=cpc&utm_campaign=_chart_ol_allcountries_mixed_search_brand_exact_&km_CPC_CampaignId=12085501855&km_CPC_AdGroupID=117687297058&km_CPC_Keyword=lucid%20chart&km_CPC_MatchType=e&km_CPC_ExtensionID=&km_CPC_Network=g&km_CPC_AdPosition=&km_CPC_Creative=491660231431&km_CPC_TargetID=kwd-55720648523&km_CPC_Country=1008311&km_CPC_Device=c&km_CPC_placement=&km_CPC_target=&gclid=EAIaIQobChMInrXb5vHd_wIVWfZ3Ch37Ogt_EAAYASAAEgJKpPD_BwE).
+
+![Flowchart](documentation/screenshots//e-vehicle-picker-flowchart.png)
 
 ## **Data Model**
 The data is stored on the *Google Cloud platform (Google Sheets)*. This data is accessed using Python Libraries like google oauth2 and gspread. 

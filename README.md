@@ -3,10 +3,10 @@
 ## **Code Institute Portfolio Project III**
 ## **Story**
 The idea behind the *Electric Vehicle Picker* is to create an application that can help brokers, advisors, or sales employees to find the best option for their customers. 
+
 Based on the preferences regarding price, range, and type of car, a suitable match can be found and a recommendation can be made. 
 
 The data given by the customer can be saved and used for further analysis. For example concerning the e-vehicle market, personal sales or marketing demographics.  
-
 
 ## **Contents**
 * [Story](#story)
@@ -15,7 +15,7 @@ The data given by the customer can be saved and used for further analysis. For e
     * [Target audience](#target-audience)
     * [User Goals](#user-goals)
 * [Flowchart](#flowchart)
-* [Database](#database)
+* [Data Model](#data-model)
 * [Features](#features)
     * [Future Features](#future-features)
 * [Bugs and Challenges](#bugs-and-challenges)
@@ -48,9 +48,15 @@ The application is aimed at brokers, advisors, or sales employees of car dealers
 
 ## **Flowchart**
 
-## **Database**
+## **Data Model**
+The data is stored on the *Google Cloud platform (Google Sheets)*. This data is accessed using Python Libraries like google oauth2 and gspread. 
+
+![Customers worksheet](documentation/screenshots/googlesheet-customers.png)
+![Options worksheet](documentation/screenshots/googlesheet-options.png)
 
 ## **Features**
+With the application being a comand-line interface based app functionality the focus was put on the functionality. 
+
 
 ### **Future Features**
 

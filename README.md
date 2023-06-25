@@ -1,18 +1,19 @@
 # **Electric Vehicle Picker**
 
 ## **Code Institute Portfolio Project III**
+## **Story**
+The idea behind the *Electric Vehicle Picker* is to create an application that can help brokers, advisors, or sales employees to find the best option for their customers. 
+Based on the preferences regarding price, range, and type of car, a suitable match can be found and a recommendation can be made. 
 
-## **Background**
- With the growth of the electric vehicle market, it can become quite difficult to keep up with all the options the brands have to offer. The cars differ in range, price and type, which can make choosing the right car a hassle. 
-Getting support from professionals, who ask the right questions can ease your way to the perfect e-vehicle. 
+The data given by the customer can be saved and used for further analysis. For example concerning the e-vehicle market, personal sales or marketing demographics.  
+
 
 ## **Contents**
-* [Background](#background)
-* [Strategy](#strategy)
+* [Story](#story)
 * [Scope](#scope)
 * [User Experience UX](#user-experience-ux)
     * [Target audience](#target-audience)
-    * [User Stories](#user-stories)
+    * [User Goals](#user-goals)
 * [Flowchart](#flowchart)
 * [Database](#database)
 * [Features](#features)
@@ -27,12 +28,6 @@ Getting support from professionals, who ask the right questions can ease your wa
     * [Code](#code)
     * [Acknowledgments](#acknowledgments)
 
-## **Strategy**
-The idea behind the *Electric Vehicle Picker* is to create an application that can help brokers, advisors, or sales employees to find the best option for their customers. 
-Based on the preferences regarding price, range, and type of car, a suitable match can be found and a recommendation can be made. 
-
-The data given by the customer can be saved and used for further analysis. For example concerning the e-vehicle market, personal sales or marketing demographics.  
-
 ## **Scope**
 The Scope of this project is building a command-line application with Python. Users can parse and analyze data, export results to a file, and import datasets. 
 
@@ -41,7 +36,15 @@ The Scope of this project is building a command-line application with Python. Us
 ### **Target Audience**
 The application is aimed at brokers, advisors, or sales employees of car dealerships whos jobs it is to find the matching electrical car to the preferences of their customers. 
 
-### **User Stories**
+### **User Goals**
+-   As a user, I want to be welcomed to the application.
+-   As a user, I want to be presented with instructions that are clear.
+-   As a user, I want to understand how to insert input values.
+-   As a user, I want to understand what is wrong with my input value if an error occurs.
+-   As a user, I want to be able to enter the customers details.
+-   As a user, I want to be able to get a selection of car types to choose from.
+-   As a user, I want to be able to select one preffered car type.
+-   As a user, I want to want to see the result of my selection.
 
 ## **Flowchart**
 
@@ -51,13 +54,20 @@ The application is aimed at brokers, advisors, or sales employees of car dealers
 
 ### **Future Features**
 
-## **Bugs and Challenges**
+## **Bugs**
+All bugs are fixed, there are no bugs left to fix.
+
 
 ## **Technologies Used**
+The language used to create this application was Python.
 
-### **Languages**
+**Frameworks & Tools**
+* [Lucidchart](https://www.lucidchart.com/pages/landing?utm_source=google&utm_medium=cpc&utm_campaign=_chart_ol_allcountries_mixed_search_brand_exact_&km_CPC_CampaignId=12085501855&km_CPC_AdGroupID=117687297058&km_CPC_Keyword=lucid%20chart&km_CPC_MatchType=e&km_CPC_ExtensionID=&km_CPC_Network=g&km_CPC_AdPosition=&km_CPC_Creative=491660231431&km_CPC_TargetID=kwd-55720648523&km_CPC_Country=1008311&km_CPC_Device=c&km_CPC_placement=&km_CPC_target=&gclid=EAIaIQobChMInrXb5vHd_wIVWfZ3Ch37Ogt_EAAYASAAEgJKpPD_BwE) was used for creating the *flowchart*. 
+* [GitHub](https://github.com/join/welcome) and Git were used as host plattform and version control.
+* [Codeanywhere](https://app.codeanywhere.com/) as IDE for writing and editing code.
+* [Google Sheets](https://www.google.com/sheets/about/) was used for creating the databse.
+* [Heroku](https://dashboard.heroku.com/apps) was used for deployment.
 
-### **Frameworks & Tools**
 
 ## **Deployment**
 This application was developed in the [Codeanywhere](https://app.codeanywhere.com/) IDE and deployed on [Heroku](https://electric-vehicle-picker-aa4e1c9b3f59.herokuapp.com/).

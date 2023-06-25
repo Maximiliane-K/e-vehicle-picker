@@ -76,7 +76,14 @@ This application was developed in the [Codeanywhere](https://app.codeanywhere.co
 11. Select *Enable Automatic Deploy* to rebuild your project automatically every time you push a new commit.
 
 ## **Development**
-
+For local development the project repository can be found on [GitHub](https://github.com/join/welcome).
+-	Log in or sign up to [GitHub](https://github.com/join/welcome).
+-	Navigate to my GitHub profil, [Maximiliane-K](https://github.com/Maximiliane-K.).
+-	Locate the repository named *“e-vehicle-picker”*.
+-	Click on the green *code* button and choose HTTPS, SSH or GitHubCLI and copy the preferred link. 
+-	Open the IDE of your choice and create a directory where the repository should be stored using the terminal. 
+-	Enter `git clone`, paste the copied URL and press enter.
+-	The repository will be cloned to the selected repository. 
 
 ## **Testing**
 

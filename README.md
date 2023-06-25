@@ -17,6 +17,13 @@ The data given by the customer can be saved and used for further analysis. For e
 * [Flowchart](#flowchart)
 * [Data Model](#data-model)
 * [Features](#features)
+    * [Intro](#intro)
+    * [Customer details](#customer-details)
+    * [Type selection](#type-selection)
+    * [Selected cars](#selected-cars)
+    * [Restart or exit](#restart-or-exit)
+    * [Exit](#exit)
+    * [Restart](#restart)
     * [Future Features](#future-features)
 * [Bugs and Challenges](#bugs-and-challenges)
 * [Technologies Used](#technologies-used)
@@ -61,14 +68,36 @@ The data is stored on the *Google Cloud platform (Google Sheets)*. This data is 
 ## **Features**
 With the application being a comand-line interface based app, the focus was put on the functionality. 
 
-### **Welcome**
+### **Intro**
+* Welcome to the page and instructions for the first user input.
+![Intro](documentation/program-screenshots/intro-start.png)
 
-![Intro](documentation/screenshots/screenshot-logo.png)
+### **Customer Details**
+* User input *Customer Details* is validated and written to *customers* worksheet.
+![Customer details](documentation/program-screenshots/customer-details.png)
 
-- The logo features a casette with headphones and the games name *Lyrical Pop Quiz*.
-- It appears in bright colors to reflect the color-sheme of the application. 
-- The logo was created using [Canva](https://www.canva.com/).
+### **Type Selection**
+* User is presented with the choices of car types.
+* User input is required.
+![Car type selection](documentation/program-screenshots/car-type-selection.png)
 
+### **Selected cars**
+* User input is being validaten.
+* Options are read from the *options* worksheet.
+* List with matching cars is presented to user.
+![Selected cars](documentation/program-screenshots/selected-cars.png)
+
+### **Restart or exit**
+* User gets the option to either run the program from the beginning or exit the program.
+![Restart or exit](documentation/program-screenshots/restart-exit.png)
+
+### **Exit**
+* User input gets validated and short exit message will appear. 
+![Exit](documentation/program-screenshots/exit-program.png)
+
+### **Restart**
+* User input gets validated and the program restarts.
+![Restart](documentation/program-screenshots/restart.png)
 
 ### **Future Features**
 

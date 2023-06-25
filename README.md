@@ -8,6 +8,8 @@ Based on the preferences regarding price, range, and type of car, a suitable mat
 
 The data given by the customer can be saved and used for further analysis. For example concerning the e-vehicle market, personal sales or marketing demographics.  
 
+Try out the application here: [e-vehicle-picker](https://electric-vehicle-picker-aa4e1c9b3f59.herokuapp.com/ )
+
 ## **Contents**
 * [Story](#story)
 * [Scope](#scope)
@@ -100,6 +102,10 @@ With the application being a comand-line interface based app, the focus was put 
 ![Restart](documentation/program-screenshots/restart.png)
 
 ### **Future Features**
+Future features may include:
+* Adding the user selection to a worksheet containing the customer id and recommendations. 
+* More filters can be implemented to get a more precise selection of cars.
+* Sales can be documented and analyzed.
 
 ## **Bugs**
 All bugs are fixed, there are no bugs left to fix.

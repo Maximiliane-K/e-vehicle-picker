@@ -4,7 +4,7 @@ e-vehicle-survey-data spreadsheet
 """
 import gspread
 from google.oauth2.service_account import Credentials
-from pprint import pprint
+
 
 # The following code was taken from the love_sandwiches
 # walkthrough project by CodeInstitute
@@ -50,7 +50,7 @@ def get_customer_details():
         print(*details, sep="\n\n")
         print("Example: June Austin,35,f,no\n")
 
-        details_str = input("Enter customer details here: ")
+        details_str = input("Enter customer details here: \n")
 
         customer_details = details_str.split(",")
 

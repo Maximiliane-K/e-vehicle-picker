@@ -108,6 +108,11 @@ For local development the project repository can be found on [GitHub](https://gi
 -	The repository will be cloned to the selected repository. 
 
 ## **Testing**
+* Manual tests were done to check the funcionality and ensure all functions work as intended.
+* All inputs were tested with different input values.
+* All input validations work and provide the correct error messages to user when input values are incorrect.
+* Code has been validated with CI Python Linter and no errors/warnings were found.
 
+![CI Python Linter ](documentation/screenshots/ci-python-linter.png)
 
 ## **Credits**

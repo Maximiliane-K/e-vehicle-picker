@@ -260,12 +260,12 @@ def main():
 
 def back_to_start():
     """
-    Function to either start the programm from the beginning or 
+    Function to either start the programm from the beginning or
     end it with a short user message.
     """
     while True:
         print("\nIf you want to start from the beginning please enter 's'\n"
-        "to exit the program enter 'e'.\n")
+              "to exit the program enter 'e'.\n")
         back_options = input("Please enter input here: \n")
 
         if validate_back_to_start(back_options):
@@ -297,15 +297,13 @@ def start_or_exit(back_options):
     """
     Function to either start program again or exit program.
     """
-    
+
     if back_options == 's':
         print("Restarting the program...\n")
         main()
 
     elif back_options == 'e':
         print("Thank you for using the e-vehicle app.")
- 
+
 
 main()
-
-    

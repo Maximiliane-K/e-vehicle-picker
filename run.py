@@ -241,14 +241,10 @@ def get_type_options(customer_type):
     for option in options:
         if option["Type"] == car_type:
             result = list(option.values())[0]
-            option_results = result.split(",")
-            print(option_results)
+            print(result)
 
 
 def main():
-    """
-    Run all functions
-    """
     intro()
     details = get_customer_details()
     customer_details = [detail for detail in details]
@@ -256,5 +252,19 @@ def main():
     customer_type = select_car_type()
     car_options = get_type_options(customer_type)
 
+    back_to_start()
 
+def back_to_start():
+    print("\nIf you want to start from the beginning please enter 's'.\n"
+    "to exit the programm enter 'e'.")
+    back_options = input("Enter option (Start/Exit): \n")
+
+    if back_options == "e":
+        print("Thank you for using e-vehicle pciker.")
+    elif back_options == "s":
+        main()
+    
 main()
+
+
+    

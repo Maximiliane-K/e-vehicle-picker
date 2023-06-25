@@ -55,14 +55,21 @@ The data is stored on the *Google Cloud platform (Google Sheets)*. This data is 
 ![Options worksheet](documentation/screenshots/googlesheet-options.png)
 
 ## **Features**
-With the application being a comand-line interface based app functionality the focus was put on the functionality. 
+With the application being a comand-line interface based app, the focus was put on the functionality. 
+
+### **Welcome**
+
+![Intro](documentation/screenshots/screenshot-logo.png)
+
+- The logo features a casette with headphones and the games name *Lyrical Pop Quiz*.
+- It appears in bright colors to reflect the color-sheme of the application. 
+- The logo was created using [Canva](https://www.canva.com/).
 
 
 ### **Future Features**
 
 ## **Bugs**
 All bugs are fixed, there are no bugs left to fix.
-
 
 ## **Technologies Used**
 The language used to create this application was Python.
@@ -73,7 +80,6 @@ The language used to create this application was Python.
 * [Codeanywhere](https://app.codeanywhere.com/) as IDE for writing and editing code.
 * [Google Sheets](https://www.google.com/sheets/about/) was used for creating the databse.
 * [Heroku](https://dashboard.heroku.com/apps) was used for deployment.
-
 
 ## **Deployment**
 This application was developed in the [Codeanywhere](https://app.codeanywhere.com/) IDE and deployed on [Heroku](https://electric-vehicle-picker-aa4e1c9b3f59.herokuapp.com/).
@@ -102,5 +108,6 @@ For local development the project repository can be found on [GitHub](https://gi
 -	The repository will be cloned to the selected repository. 
 
 ## **Testing**
+
 
 ## **Credits**

@@ -245,6 +245,9 @@ def get_type_options(customer_type):
 
 
 def main():
+    """
+    Function to run all program functions
+    """
     intro()
     details = get_customer_details()
     customer_details = [detail for detail in details]
@@ -254,17 +257,55 @@ def main():
 
     back_to_start()
 
+
 def back_to_start():
-    print("\nIf you want to start from the beginning please enter 's'.\n"
-    "to exit the programm enter 'e'.")
-    back_options = input("Enter option (Start/Exit): \n")
+    """
+    Function to either start the programm from the beginning or 
+    end it with a short user message.
+    """
+    while True:
+        print("\nIf you want to start from the beginning please enter 's'\n"
+        "to exit the program enter 'e'.\n")
+        back_options = input("Please enter input here: \n")
 
-    if back_options == "e":
-        print("Thank you for using e-vehicle pciker.")
-    elif back_options == "s":
-        main()
+        if validate_back_to_start(back_options):
+            print(f"\nEntry '{back_options}' is valid. Processing data...\n")
+            start_or_exit(back_options)
+            break
+
+    return back_options
+
+
+def validate_back_to_start(back_options):
+    """
+    Functiont to validate user input of back_to_start function.
+    """
+    try:
+        if back_options not in ["e", "s"]:
+            raise ValueError(
+                f"You entered '{back_options}'. \
+                     \nOnly 'e' for exit or 's' for start are valid"
+            )
+    except ValueError as e:
+        print(f"\nEntry not valid:\n{e}, please try again.\n")
+        return False
+
+    return True
+
+
+def start_or_exit(back_options):
+    """
+    Function to either start program again or exit program.
+    """
     
-main()
+    if back_options == 's':
+        print("Restarting the program...\n")
+        main()
 
+    elif back_options == 'e':
+        print("Thank you for using the e-vehicle app.")
+ 
+
+main()
 
     

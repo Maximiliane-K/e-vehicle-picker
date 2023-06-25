@@ -28,8 +28,6 @@ def intro():
     Introduction to the app
     """
     print("Welcome to Electric Vehicle Picker!\n")
-    print(("This app is meant to support you and your customer to find"
-           " the right match when it comes to a new e-vehicle.\n"))
     print(("Follow the instructions given to get a recommendation and save"
            " the customer data for further analysis.\n"))
 
@@ -55,7 +53,7 @@ def get_customer_details():
         customer_details = details_str.split(",")
 
         if validate_data_input(customer_details):
-            print("Data valid!")
+            print("\nData valid!")
             break
 
     add_id(customer_details)
@@ -183,7 +181,7 @@ def select_car_type():
         type_choices = input("Only select one letter [a, b, c, d, e]: \n")
 
         customer_choice = type_choices.lower().strip()
-        print("Validating entered value...")
+        print("\nValidating entered value...")
 
         if validate_type_choice(customer_choice):
             print(f"Entry '{customer_choice}' is valid. Processing data...\n")

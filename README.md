@@ -60,8 +60,23 @@ The application is aimed at brokers, advisors, or sales employees of car dealers
 ### **Frameworks & Tools**
 
 ## **Deployment**
+This application was developed in the [Codeanywhere](https://app.codeanywhere.com/) IDE and deployed on [Heroku](https://electric-vehicle-picker-aa4e1c9b3f59.herokuapp.com/).
+
+### Deploying to Heroku:
+1. Once logged or signed into [Heroku](https://dashboard.heroku.com/apps), find the *New* button and select *Create new app*.
+2. Enter a *unique* app name, choose the region closest to you and select
+*Create app*.
+3. Go to the *Settings* tab and click on *Reveal Config Vars*.
+5. For the first *Config Var* enter `CREDS` for *Key*.
+6. Enter the data from your `credentials file` (e.g. creds.json) to *Value* of first *Config Var* then select *add*.
+7. For the second *Config Var* set the value of *Key* to `PORT`, and the *Value* to `8000` then select *add*.
+8. Go to *Add Buildpack* and select `Python` as the first dependency and `Node.js` as the second. Mind that the order of the dependencies is import.
+9. Navigate to *Deploy* tab and select *Github* as *Deployed Method*.
+10. Connect to your *Github* and select the *repository* that you want to deploy. 
+11. Select *Enable Automatic Deploy* to rebuild your project automatically every time you push a new commit.
 
 ## **Development**
+
 
 ## **Testing**
 
